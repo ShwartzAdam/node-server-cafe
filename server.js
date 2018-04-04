@@ -7,18 +7,14 @@ const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
 const cors = require('cors');
 
-
 //Init app
 const app = express();
-
-
 
 //Set static folder
 app.use(express.static(__dirname+'/../images'));
 app.use(fileUpload());
 
 console.log(__dirname);
-
 
 // Parsers for POST data
 app.use(bodyParser.json());
@@ -38,7 +34,6 @@ const api = require('./api');
 
 // Set our api routes
 app.use('/api', api);
-
 
 // Create http server
 const server = http.createServer(app);
